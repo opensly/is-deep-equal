@@ -17,13 +17,6 @@ export interface DeepEqualOptions {
 
 export interface RequiredDeepEqualOptions extends Required<DeepEqualOptions> {}
 
-export interface BenchmarkResult {
-  totalOperations: number;
-  timeTaken: number;
-  operationsPerSecond: number;
-  averageTimePerOperation: number;
-}
-
 export type TypedArrayConstructor = 
   | Int8ArrayConstructor
   | Uint8ArrayConstructor

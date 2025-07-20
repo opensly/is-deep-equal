@@ -1,4 +1,4 @@
-# is-deep-equal
+# deep-equal-check
 
 Fast deep equality checker for modern JavaScript and TypeScript – robust, configurable, and safe for all data types.
 
@@ -14,15 +14,15 @@ Fast deep equality checker for modern JavaScript and TypeScript – robust, conf
 
 ## Installation
 
-\`\`\`bash
-npm install is-deep-equal
-\`\`\`
+```bash
+npm install deep-equal-check
+```
 
 ## Quick Start
 
 ### TypeScript/ES Modules
-\`\`\`typescript
-import { isDeepEqual } from 'is-deep-equal';
+```typescript
+import { isDeepEqual } from 'deep-equal-check';
 
 // Basic usage
 isDeepEqual({a: 1}, {a: 1}); // true
@@ -42,11 +42,11 @@ const obj2 = {
   map: new Map([['key', 'value']])
 };
 isDeepEqual(obj1, obj2); // true
-\`\`\`
+```
 
 ### JavaScript/CommonJS
-\`\`\`javascript
-const { isDeepEqual } = require('is-deep-equal');
+```javascript
+const { isDeepEqual } = require('deep-equal-check');
 
 // Basic usage
 isDeepEqual({a: 1}, {a: 1}); // true
@@ -55,15 +55,15 @@ isDeepEqual([1, 2, 3], [1, 2, 3]); // true
 // With options
 isDeepEqual(NaN, NaN, { nanEqual: true }); // true
 isDeepEqual(+0, -0, { strictZero: true }); // false
-\`\`\`
+```
 
 ## Performance
 
 Run the built-in benchmark:
 
-\`\`\`bash
+```bash
 npm run benchmark
-\`\`\`
+```
 
 ## Architecture
 The library uses a **hybrid optimization strategy** that combines:

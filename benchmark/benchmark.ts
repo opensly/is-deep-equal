@@ -2,8 +2,8 @@
  * Performance benchmark utilities
  */
 
-import type { BenchmarkResult } from '../src/types';
-import { isDeepEqual } from '../src/index';
+import deepEqualCheck from '../src/index';
+import type { BenchmarkResult } from './types';
 
 export function benchmark(iterations = 100000): BenchmarkResult | null {
   if (typeof performance === 'undefined') {
@@ -29,7 +29,7 @@ export function benchmark(iterations = 100000): BenchmarkResult | null {
   
   for (let i = 0; i < iterations; i++) {
     for (const [a, b] of testCases) {
-      isDeepEqual(a, b);
+      deepEqualCheck(a, b);
     }
   }
   
