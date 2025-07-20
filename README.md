@@ -22,11 +22,11 @@ npm install deep-equal-check
 
 ### TypeScript/ES Modules
 ```typescript
-import { isDeepEqual } from 'deep-equal-check';
+import deepEqualCheck from 'deep-equal-check';
 
 // Basic usage
-isDeepEqual({a: 1}, {a: 1}); // true
-isDeepEqual([1, 2, 3], [1, 2, 3]); // true
+deepEqualCheck({a: 1}, {a: 1}); // true
+deepEqualCheck([1, 2, 3], [1, 2, 3]); // true
 
 // Complex objects
 const obj1 = { 
@@ -41,20 +41,20 @@ const obj2 = {
   set: new Set([1, 2, 3]),
   map: new Map([['key', 'value']])
 };
-isDeepEqual(obj1, obj2); // true
+deepEqualCheck(obj1, obj2); // true
 ```
 
 ### JavaScript/CommonJS
 ```javascript
-const { isDeepEqual } = require('deep-equal-check');
+const deepEqualCheck = require('deep-equal-check');
 
 // Basic usage
-isDeepEqual({a: 1}, {a: 1}); // true
-isDeepEqual([1, 2, 3], [1, 2, 3]); // true
+deepEqualCheck({a: 1}, {a: 1}); // true
+deepEqualCheck([1, 2, 3], [1, 2, 3]); // true
 
 // With options
-isDeepEqual(NaN, NaN, { nanEqual: true }); // true
-isDeepEqual(+0, -0, { strictZero: true }); // false
+deepEqualCheck(NaN, NaN, { nanEqual: true }); // true
+deepEqualCheck(+0, -0, { strictZero: true }); // false
 ```
 
 ## Performance
