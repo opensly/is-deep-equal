@@ -1,7 +1,7 @@
 #!/usr/bin/env ts-node
 
 import { compareBenchmark } from './benchmark';
-import { isDeepEqual } from '../src/index';
+import { deepEqualCheck } from '../src/index';
 import isEqual from 'lodash/isEqual';
 // @ts-ignore - deep-eql doesn't have TypeScript definitions
 import deepEqual from 'deep-eql';
@@ -69,7 +69,7 @@ const testCases: Array<{ name: string; a: unknown; b: unknown }> = [
 const competitors = [
   {
     name: 'is-deep-equal',
-    fn: (a: unknown, b: unknown) => isDeepEqual(a, b)
+    fn: (a: unknown, b: unknown) => deepEqualCheck(a, b)
   },
   {
     name: 'lodash/isEqual',
