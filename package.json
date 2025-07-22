@@ -1,6 +1,6 @@
 {
   "name": "deep-equal-check",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Ultra-fast deep equality checker with comprehensive TypeScript support",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

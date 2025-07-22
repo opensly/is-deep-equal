@@ -68,7 +68,7 @@ const testCases: Array<{ name: string; a: unknown; b: unknown }> = [
 // Create competitors array
 const competitors = [
   {
-    name: 'is-deep-equal',
+    name: 'deep-equal-check',
     fn: (a: unknown, b: unknown) => deepEqualCheck(a, b)
   },
   {
@@ -159,27 +159,3 @@ summary.sort((a, b) => {
   if (b.wins !== a.wins) return b.wins - a.wins;
   return a.avgRank - b.avgRank;
 });
-
-console.log('\n🏆 Performance Summary');
-console.log('=' .repeat(80));
-console.log('Rank | Library         | Wins | Avg Rank | Total Time');
-console.log('-'.repeat(60));
-
-summary.forEach((item, index) => {
-  console.log(`${(index + 1).toString().padStart(4)} | ${item.name.padEnd(15)} | ${item.wins.toString().padStart(4)} | ${item.avgRank.toFixed(1).padStart(8)} | ${item.totalTime.toFixed(1)}ms`);
-});
-
-// Feature comparison
-console.log('\n📋 Feature Comparison');
-console.log('=' .repeat(80));
-console.log('Feature              | is-deep-equal | lodash | deep-eql | fast-deep-equal');
-console.log('-'.repeat(80));
-console.log('Circular References  |      ✓        |   ✓    |    ✓     |       ✗');
-console.log('ES6+ Types (Set/Map) |      ✓        |   ✓    |    ✓     |       ✓');
-console.log('Date Objects         |      ✓        |   ✓    |    ✓     |       ✓');
-console.log('RegExp Objects       |      ✓        |   ✓    |    ✓     |       ✓');
-console.log('NaN Handling         |      ✓        |   ✓    |    ✓     |       ✓');
-console.log('TypeScript Support   |      ✓        |   ✓    |    ✗     |       ✓');
-console.log('Bundle Size          |    ~15KB      | ~50KB  |  ~25KB   |     ~8KB');
-
-console.log('\n✅ Benchmark completed!'); 

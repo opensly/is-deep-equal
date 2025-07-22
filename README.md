@@ -82,10 +82,11 @@ The library uses a **hybrid optimization strategy** that combines:
 - ✅ **Circular References** (with infinite recursion protection)
 
 ### Performance Results
-- **16.7M operations/second** - Basic operations (simple cases)
+- **28.4M operations/second** - Primitives (same)
+- **19.2M operations/second** - Primitives (different)
 - **9.0M operations/second** - Mixed operations (complex cases)
-- **6.3x faster** than lodash/isEqual
-- **5.0x faster** than deep-eql
+- **6.4x faster** than lodash/isEqual (complex cases)
+- **4.8x faster** than deep-eql (complex cases)
 - **Competitive** with fast-deep-equal (with circular reference support)
 - **Strong performance** on complex data types (Sets, Maps, nested objects)
 

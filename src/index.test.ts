@@ -1,4 +1,4 @@
-import { deepEqualCore } from './deep-equal-core';
+import { deepEqualCheck } from './index';
 
 describe('compareIterables (Set comparison via deepEqualCore)', () => {
   // Helper to call compareIterables via deepEqualCore
@@ -9,9 +9,9 @@ describe('compareIterables (Set comparison via deepEqualCore)', () => {
     strictZero: false,
   } as any;
 
-  function callCompareIterables(a: Set<any>, b: Set<any>, options = defaultOptions) {
-    // Use deepEqualCore, which will call compareIterables for Sets
-    return deepEqualCore(a, b, options, new WeakMap(), 0);
+  function callCompareIterables(a: Set<any>, b: any, options = defaultOptions) {
+    // Use deepEqualCheck, which will handle Sets
+    return deepEqualCheck(a, b, options);
   }
 
   it('returns true for two empty sets', () => {
@@ -64,7 +64,7 @@ describe('compareIterables (Set comparison via deepEqualCore)', () => {
   });
 
   it('returns false if compared to a non-set', () => {
-    expect(deepEqualCore(new Set([1, 2]), [1, 2], defaultOptions, new WeakMap(), 0)).toBe(false);
+    expect(deepEqualCheck(new Set([1, 2]), [1, 2] as any, defaultOptions)).toBe(false);
   });
 });
 describe('deepEqualCore (general object and type handling)', () => {
@@ -76,7 +76,7 @@ describe('deepEqualCore (general object and type handling)', () => {
   } as any;
 
   function callDeepEqual(a: unknown, b: unknown, options = defaultOptions) {
-    return deepEqualCore(a, b, options, new WeakMap(), 0);
+    return deepEqualCheck(a, b, options);
   }
 
   it('returns true for strictly equal primitives', () => {
